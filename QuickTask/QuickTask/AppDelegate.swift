@@ -4,78 +4,93 @@
 //
 //  Created by Prabh Manchanda on 2025-04-09.
 //
-
 import UIKit
-import CoreData
+import SQLite3
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    var window: UIWindow?
+    var db: OpaquePointer?
 
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        openDatabase()
+        createTaskTable()
         return true
     }
 
-    // MARK: UISceneSession Lifecycle
+    func openDatabase() {
+        let fileURL = try! FileManager.default
+            .url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+            .appendingPathComponent("QuickTask.sqlite")
 
-    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        // Called when a new scene session is being created.
-        // Use this method to select a configuration to create the new scene with.
-        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
-    }
-
-    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
-    }
-
-    // MARK: - Core Data stack
-
-    lazy var persistentContainer: NSPersistentContainer = {
-        /*
-         The persistent container for the application. This implementation
-         creates and returns a container, having loaded the store for the
-         application to it. This property is optional since there are legitimate
-         error conditions that could cause the creation of the store to fail.
-        */
-        let container = NSPersistentContainer(name: "QuickTask")
-        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-            if let error = error as NSError? {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                 
-                /*
-                 Typical reasons for an error here include:
-                 * The parent directory does not exist, cannot be created, or disallows writing.
-                 * The persistent store is not accessible, due to permissions or data protection when the device is locked.
-                 * The device is out of space.
-                 * The store could not be migrated to the current model version.
-                 Check the error message to determine what the actual problem was.
-                 */
-                fatalError("Unresolved error \(error), \(error.userInfo)")
-            }
-        })
-        return container
-    }()
-
-    // MARK: - Core Data Saving support
-
-    func saveContext () {
-        let context = persistentContainer.viewContext
-        if context.hasChanges {
-            do {
-                try context.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nserror = error as NSError
-                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-            }
+        if sqlite3_open(fileURL.path, &db) != SQLITE_OK {
+            print("❌ Error opening database")
+        } else {
+            print("✅ Database opened at \(fileURL.path)")
         }
     }
 
-}
+    func createTaskTable() {
+        let query = """
+        CREATE TABLE IF NOT EXISTS Tasks (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            title TEXT,
+            description TEXT,
+            date TEXT,
+            time TEXT
+        );
+        """
+        if sqlite3_exec(db, query, nil, nil, nil) != SQLITE_OK {
+            let errmsg = String(cString: sqlite3_errmsg(db)!)
+            print("❌ Error creating table: \(errmsg)")
+        } else {
+            print("✅ Task table created")
+        }
+    }
 
+    func insertTask(title: String, description: String, date: String, time: String) {
+        var stmt: OpaquePointer?
+        let query = "INSERT INTO Tasks (title, description, date, time) VALUES (?, ?, ?, ?)"
+
+        if sqlite3_prepare_v2(db, query, -1, &stmt, nil) == SQLITE_OK {
+            sqlite3_bind_text(stmt, 1, (title as NSString).utf8String, -1, nil)
+            sqlite3_bind_text(stmt, 2, (description as NSString).utf8String, -1, nil)
+            sqlite3_bind_text(stmt, 3, (date as NSString).utf8String, -1, nil)
+            sqlite3_bind_text(stmt, 4, (time as NSString).utf8String, -1, nil)
+
+            if sqlite3_step(stmt) == SQLITE_DONE {
+                print("✅ Task inserted")
+            } else {
+                print("❌ Failed to insert task")
+            }
+        } else {
+            print("❌ Prepare insert statement failed")
+        }
+        sqlite3_finalize(stmt)
+    }
+
+    func fetchTasks() -> [Task] {
+        var stmt: OpaquePointer?
+        let query = "SELECT * FROM Tasks"
+        var results: [Task] = []
+
+        if sqlite3_prepare_v2(db, query, -1, &stmt, nil) == SQLITE_OK {
+            while sqlite3_step(stmt) == SQLITE_ROW {
+                let id = Int(sqlite3_column_int(stmt, 0))
+                let title = String(cString: sqlite3_column_text(stmt, 1))
+                let description = String(cString: sqlite3_column_text(stmt, 2))
+                let date = String(cString: sqlite3_column_text(stmt, 3))
+                let time = String(cString: sqlite3_column_text(stmt, 4))
+
+                let task = Task(id: id, title: title, description: description, date: date, time: time)
+                results.append(task)
+            }
+        } else {
+            print("❌ Prepare fetch statement failed")
+        }
+        sqlite3_finalize(stmt)
+        return results
+    }
+}
