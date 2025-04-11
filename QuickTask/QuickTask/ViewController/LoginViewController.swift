@@ -23,6 +23,7 @@ class LoginViewController: UIViewController {
         let isValid = appDelegate.validateUser(email: email, password: password)
 
         if isValid {
+            UserDefaults.standard.set(email, forKey: "loggedInEmail")
             performSegue(withIdentifier: "Homepage", sender: self) // 👈 this triggers your segue to home page
         } else {
             showAlert("Invalid email or password")
