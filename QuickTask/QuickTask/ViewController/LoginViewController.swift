@@ -9,21 +9,41 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
 
-        // Do any additional setup after loading the view.
+    @IBAction func loginTapped(_ sender: UIButton) {
+        guard let email = emailField.text, !email.isEmpty,
+              let password = passwordField.text, !password.isEmpty else {
+            showAlert("Email and password are required")
+            return
+        }
+
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let isValid = appDelegate.validateUser(email: email, password: password)
+
+        if isValid {
+            performSegue(withIdentifier: "Homepage", sender: self) // 👈 this triggers your segue to home page
+        } else {
+            showAlert("Invalid email or password")
+        }
+    }
+
+
+
+    func showAlert(_ message: String) {
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func BackToSignUp(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "BackToSignUp", sender: self)
     }
-    */
-
+    @IBAction func Homepage(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "Homepage", sender: self)
+    }
+    @IBAction func main(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "main", sender: self)
+    }
 }

@@ -25,5 +25,12 @@ class SettingViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBAction func Logout(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "Logout", sender: self)
+    }
+    @IBAction func Backtomain(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "Backtomain", sender: self)
+    }
 
 }
