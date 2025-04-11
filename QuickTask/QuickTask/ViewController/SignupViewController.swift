@@ -4,15 +4,44 @@
 //
 //  Created by Prabh Manchanda on 2025-04-10.
 //
+
 import UIKit
 
-class SignupViewController: UIViewController {
+class SignupViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var firstNameField: UITextField!
     @IBOutlet weak var lastNameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var phoneField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Set delegates
+        firstNameField.delegate = self
+        lastNameField.delegate = self
+        emailField.delegate = self
+        phoneField.delegate = self
+        passwordField.delegate = self
+
+        // Tap to dismiss keyboard
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tapGesture)
+    }
+
+    // MARK: - Keyboard Handling
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+
+    // MARK: - Signup Action
 
     @IBAction func signupTapped(_ sender: UIButton) {
         guard let fname = firstNameField.text, !fname.isEmpty,
@@ -40,7 +69,7 @@ class SignupViewController: UIViewController {
                 preferredStyle: .alert
             )
             alert.addAction(UIAlertAction(title: "OK", style: .default) { _ in
-                self.performSegue(withIdentifier: "BackToLogin", sender: self) // <- make sure this segue exists
+                self.performSegue(withIdentifier: "BackToLogin", sender: self)
             })
             present(alert, animated: true)
         } else {
@@ -48,11 +77,15 @@ class SignupViewController: UIViewController {
         }
     }
 
+    // MARK: - Alert
+
     func showAlert(_ message: String) {
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         present(alert, animated: true)
     }
+
+    // MARK: - Navigation
 
     @IBAction func BackTomain(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "BackTomain", sender: self)
@@ -61,5 +94,4 @@ class SignupViewController: UIViewController {
     @IBAction func BackToLogin(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "BackToLogin", sender: self)
     }
-
 }

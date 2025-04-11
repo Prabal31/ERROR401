@@ -8,7 +8,7 @@
 import UIKit
 import SQLite3
 
-class EditTaskViewController: UIViewController {
+class EditTaskViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var descField: UITextField!
@@ -20,7 +20,28 @@ class EditTaskViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+
+        // Set delegates
+        titleField.delegate = self
+        descField.delegate = self
+
+        // Dismiss keyboard on tap outside
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tapGesture)
     }
+
+    // MARK: - Dismiss Keyboard
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+
+    // MARK: - Setup UI with Task Data
 
     func configureUI() {
         guard let task = existingTask else { return }
@@ -41,6 +62,7 @@ class EditTaskViewController: UIViewController {
         }
     }
 
+    // MARK: - Save Task
 
     @IBAction func saveTapped(_ sender: UIBarButtonItem) {
         guard let title = titleField.text, !title.isEmpty,
@@ -59,7 +81,7 @@ class EditTaskViewController: UIViewController {
 
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
-        // If editing: delete old one
+        // Delete old task if editing
         if let task = existingTask {
             var stmt: OpaquePointer?
             let query = "DELETE FROM Tasks WHERE id = ?"
@@ -72,10 +94,12 @@ class EditTaskViewController: UIViewController {
             sqlite3_finalize(stmt)
         }
 
-        // Insert new/updated task
+        // Insert updated task
         appDelegate.insertTask(title: title, description: desc, date: dateString, time: timeString)
         showAlert(title: "Success", message: existingTask != nil ? "Task updated." : "Task added.")
     }
+
+    // MARK: - Alert
 
     func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -84,6 +108,9 @@ class EditTaskViewController: UIViewController {
         })
         present(alert, animated: true)
     }
+
+    // MARK: - Navigation
+
     @IBAction func BackToView(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "BackToView", sender: self)
     }

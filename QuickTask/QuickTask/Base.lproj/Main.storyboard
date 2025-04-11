@@ -24,7 +24,7 @@
                                 <items>
                                     <navigationItem title="View Task" id="Fu8-Se-jtc">
                                         <barButtonItem key="leftBarButtonItem" style="plain" id="uy0-vK-Wdp">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="mqj-g6-vgh">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="mqj-g6-vgh">
                                                 <rect key="frame" x="16" y="4.6666666666666679" width="87" height="35"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
@@ -71,14 +71,14 @@
                                                     <rect key="frame" x="0.0" y="60" width="72" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" red="1" green="0.59771414980000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Mb-CX-1Ll">
                                                     <rect key="frame" x="0.0" y="21" width="72" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" red="1" green="0.59771414980000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -99,18 +99,22 @@
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="160"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Setting.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="ioq-dh-ZPV">
+                                                    <rect key="frame" x="-6" y="-309" width="411" height="853"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qtO-1P-Zj6">
                                                     <rect key="frame" x="28" y="19" width="244" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9G-pX-t3W">
                                                     <rect key="frame" x="289" y="11" width="80" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Rhs-s3-Ozj">
@@ -130,7 +134,7 @@
                                                     <rect key="frame" x="28" y="71" width="239" height="78"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -152,7 +156,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Odc-cJ-nrk" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="584" y="-309"/>
+            <point key="canvasLocation" x="583.96946564885491" y="-309.15492957746483"/>
         </scene>
         <!--Add Task View Controller-->
         <scene sceneID="Juj-bn-xew">
@@ -231,7 +235,7 @@
                                             </button>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="5VK-SW-ubc">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="8cl-4r-ndD">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="8cl-4r-ndD">
                                                 <rect key="frame" x="277" y="4.6666666666666679" width="100" height="35"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
@@ -321,7 +325,7 @@
                                 <items>
                                     <navigationItem title="Quick Task" id="VAG-Jp-GhQ">
                                         <barButtonItem key="leftBarButtonItem" style="plain" id="OoR-lC-TIl">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="WJY-v5-hj8">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="WJY-v5-hj8">
                                                 <rect key="frame" x="16" y="4.6666666666666679" width="87" height="35"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
@@ -332,7 +336,7 @@
                                             </button>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="vTb-f8-98o">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="pw1-fs-jnr">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="pw1-fs-jnr">
                                                 <rect key="frame" x="290" y="4.6666666666666679" width="87" height="35"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
@@ -409,7 +413,7 @@
                                 <items>
                                     <navigationItem title="LogIn" id="qvY-Fy-91V">
                                         <barButtonItem key="leftBarButtonItem" style="plain" id="B7w-Ii-ucz">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Iel-Sz-XaM">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Iel-Sz-XaM">
                                                 <rect key="frame" x="16" y="4.6666666666666679" width="87" height="35"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
@@ -420,7 +424,7 @@
                                             </button>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="ikB-oJ-Kwy">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="W16-Eh-SDS">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="W16-Eh-SDS">
                                                 <rect key="frame" x="290" y="4.6666666666666679" width="87" height="35"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
@@ -660,7 +664,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="M2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ISZ-Vs-377">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <rect key="frame" x="0.0" y="0.0" width="411" height="886"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gcm-ZQ-GbZ">
@@ -752,12 +756,12 @@
                         <outlet property="descField" destination="x9R-KY-0sR" id="iKc-qf-Csh"/>
                         <outlet property="timePicker" destination="eAV-fB-vNp" id="C8G-5A-BT4"/>
                         <outlet property="titleField" destination="nkk-Bc-oNT" id="Odq-AC-G8M"/>
-                        <segue destination="hpd-Ly-AOB" kind="presentation" modalPresentationStyle="fullScreen" id="1mJ-ir-KbI"/>
+                        <segue destination="hpd-Ly-AOB" kind="presentation" identifier="BackToView" modalPresentationStyle="fullScreen" id="1mJ-ir-KbI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mVn-s6-Xs7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="584" y="1123"/>
+            <point key="canvasLocation" x="583.96946564885491" y="1122.5352112676057"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="k5T-Vy-6zb">
@@ -972,9 +976,9 @@
         <segue reference="aoW-J5-Z39"/>
         <segue reference="8p9-8p-0Am"/>
         <segue reference="6W3-0e-Dwa"/>
-        <segue reference="GE1-gg-DFh"/>
-        <segue reference="XgE-PX-LQR"/>
-        <segue reference="x4L-ZP-Co7"/>
+        <segue reference="NSc-Np-Wcs"/>
+        <segue reference="guS-1t-4wC"/>
+        <segue reference="gV4-IP-lDD"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="M1.jpg" width="600" height="900"/>
