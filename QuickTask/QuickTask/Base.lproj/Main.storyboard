@@ -156,7 +156,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Odc-cJ-nrk" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="583.96946564885491" y="-309.15492957746483"/>
+            <point key="canvasLocation" x="50" y="-306"/>
         </scene>
         <!--Add Task View Controller-->
         <scene sceneID="Juj-bn-xew">
@@ -279,7 +279,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EqA-bA-1ce" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3236" y="-420"/>
+            <point key="canvasLocation" x="3211" y="-808"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="r9R-yk-Hzw">
@@ -360,7 +360,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qPA-Rr-blI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="100" y="-1720"/>
+            <point key="canvasLocation" x="-192" y="-1764"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="tcc-w1-5of">
@@ -456,14 +456,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dRp-Jz-Hzu">
                                 <rect key="frame" x="26" y="406" width="309" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="password"/>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xz0-8i-Ms4"/>
@@ -531,7 +531,7 @@
                                     <constraint firstAttribute="height" constant="50" id="OTd-lt-WoR"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="family-name"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LCz-Yc-vCU">
                                 <rect key="frame" x="20" y="372" width="353" height="50"/>
@@ -540,7 +540,7 @@
                                     <constraint firstAttribute="height" constant="50" id="qrv-eP-5ur"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GQW-5L-in0">
                                 <rect key="frame" x="20" y="457" width="353" height="50"/>
@@ -549,7 +549,7 @@
                                     <constraint firstAttribute="height" constant="50" id="Z6N-5J-MBr"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="tel"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ig2-md-8jN">
                                 <rect key="frame" x="20" y="539" width="353" height="50"/>
@@ -558,7 +558,7 @@
                                     <constraint firstAttribute="height" constant="50" id="W7O-TT-Toh"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TUB-Ch-wh1">
                                 <rect key="frame" x="39" y="630" width="313" height="60"/>
@@ -584,7 +584,7 @@
                                 </constraints>
                                 <color key="textColor" systemColor="secondaryLabelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="name"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CU6-AU-kHy">
                                 <rect key="frame" x="251" y="742" width="84" height="35"/>
@@ -653,7 +653,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cow-RH-bbR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="584" y="-3078"/>
+            <point key="canvasLocation" x="-460" y="-3018"/>
         </scene>
         <!--Edit Task View Controller-->
         <scene sceneID="c6h-xd-y2m">
@@ -761,7 +761,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mVn-s6-Xs7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="583.96946564885491" y="1122.5352112676057"/>
+            <point key="canvasLocation" x="-2132" y="-137"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="k5T-Vy-6zb">
@@ -829,7 +829,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qS9-jP-03f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2518" y="-121"/>
+            <point key="canvasLocation" x="-2518" y="-1299"/>
         </scene>
         <!--Setting View Controller-->
         <scene sceneID="hie-Jb-Er8">
@@ -969,12 +969,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RiT-VH-uhb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3236" y="-1764"/>
+            <point key="canvasLocation" x="2349" y="-2466"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="aoW-J5-Z39"/>
-        <segue reference="8p9-8p-0Am"/>
+        <segue reference="9Fm-lM-kle"/>
+        <segue reference="JSC-h7-7bi"/>
         <segue reference="6W3-0e-Dwa"/>
         <segue reference="NSc-Np-Wcs"/>
         <segue reference="guS-1t-4wC"/>
