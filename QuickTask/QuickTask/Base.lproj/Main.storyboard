@@ -356,7 +356,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qPA-Rr-blI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="584" y="-1764"/>
+            <point key="canvasLocation" x="100" y="-1720"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="tcc-w1-5of">
@@ -969,12 +969,12 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="6l6-zn-uJo"/>
+        <segue reference="aoW-J5-Z39"/>
         <segue reference="8p9-8p-0Am"/>
         <segue reference="6W3-0e-Dwa"/>
         <segue reference="GE1-gg-DFh"/>
-        <segue reference="fmc-5a-r7R"/>
-        <segue reference="1mJ-ir-KbI"/>
+        <segue reference="XgE-PX-LQR"/>
+        <segue reference="x4L-ZP-Co7"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="M1.jpg" width="600" height="900"/>
