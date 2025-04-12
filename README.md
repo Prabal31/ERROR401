@@ -1,30 +1,25 @@
-Sure! Here's a clean, copy-ready **`README.md`** for your **QuickTask** iOS app:
-
----
-
-```markdown
 # 📱 QuickTask
 
-QuickTask is a simple and fast task manager app for iOS. Built with Swift, UIKit, and SQLite, it lets users sign up, log in, and manage daily tasks offline.
+**QuickTask** is a fast, offline-first task manager app for iOS — designed for simplicity, speed, and clarity. Built with **Swift**, **UIKit**, and **SQLite**, it empowers users to stay organized without relying on internet access.
 
 ---
 
-## ✨ Features
+## 🚀 Features
 
-- 👤 User authentication (Sign Up & Login)
-- 🗂 Create, view, edit, and delete tasks
-- 📅 Filter tasks by date using a horizontal calendar
-- 💾 Data stored locally with SQLite
-- ⚙️ Settings page to view user profile and logout
+- 👤 **User Authentication** — Sign up, log in, and manage sessions
+- 📝 **Task Management** — Create, view, edit, and delete tasks
+- 🗕️ **Calendar-Based Filtering** — Easily filter tasks by date using a horizontal calendar
+- 📀 **Offline Functionality** — All data is stored locally using SQLite
+- ⚙️ **Settings Page** — View profile details and log out
 
 ---
 
-## 🛠 Technologies Used
+## 🧰 Tech Stack
 
-- Swift + UIKit
-- SQLite (via C API)
-- UserDefaults (for session tracking)
-- Xcode (Storyboard + Interface Builder)
+- **Swift + UIKit** — Native iOS development
+- **SQLite** — Lightweight local database (via C API)
+- **UserDefaults** — Session management
+- **Xcode + Storyboards** — UI layout and navigation
 
 ---
 
@@ -32,82 +27,66 @@ QuickTask is a simple and fast task manager app for iOS. Built with Swift, UIKit
 
 ```
 QuickTask/
-├── AppDelegate.swift           # Handles database and app startup
+│
+├── AppDelegate.swift               # App setup and DB initialization
+├── SceneDelegate.swift             # Scene lifecycle management
+│
 ├── Models/
-│   └── Task.swift              # Task model class
-├── ViewControllers/
-│   ├── LoginViewController.swift
-│   ├── SignupViewController.swift
-│   ├── AddTaskViewController.swift
-│   ├── EditTaskViewController.swift
-│   ├── MainTaskViewController.swift
-│   └── SettingViewController.swift
-├── Main.storyboard            # UI & navigation
-└── Assets.xcassets            # Images and colors
+│   └── Task.swift                  # Data model for tasks
+│
+├── Controllers/
+│   ├── SignupViewController.swift        # Sign-up screen logic
+│   ├── LoginViewController.swift         # Login screen logic
+│   ├── MainTaskViewController.swift      # Calendar and task list
+│   ├── AddEditTaskViewController.swift   # Add/edit task form
+│   └── SettingsViewController.swift      # Profile info + logout
+│
+├── Views/
+│   ├── CalendarCell.swift          # Custom horizontal calendar cell
+│   └── TaskCell.swift              # UITableViewCell for tasks
+│
+├── Database/
+│   └── DBHelper.swift              # SQLite logic for users & tasks
+│
+├── Assets.xcassets/               # Icons and image assets
+├── LaunchScreen.storyboard        # Launch screen layout
+├── Main.storyboard                # Primary UI layout
+└── Info.plist                     # App configuration file
 ```
 
 ---
 
-## 📸 Screenshots
+## 🥪 Getting Started
 
-> Add screenshots here to showcase the app!
-
----
-
-## 🧪 How to Run
-
-1. Clone the repo:
+1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/QuickTask.git
+   [git clone https://github.com/yourusername/QuickTask.git]
    ```
-2. Open in Xcode:
+
+2. **Open the project in Xcode**
+   ```bash
+   open QuickTask/QuickTask.xcodeproj
    ```
-   open QuickTask.xcodeproj
-   ```
-3. Build and run on a simulator or real device (iOS 13+)
+
+3. **Build and run** on a simulator or physical device running iOS 15 or higher.
+
+> ✅ Tested with Xcode 14+ and iOS 15+
 
 ---
 
-## 🧱 Database Schema
+## 📸 Screenshots *(optional)*
 
-### Users Table
-- id (Int, primary key)
-- firstName (Text)
-- lastName (Text)
-- email (Text, unique)
-- phone (Text)
-- password (Text)
-
-### Tasks Table
-- id (Int, primary key)
-- title (Text)
-- description (Text)
-- date (Text - yyyy-MM-dd)
-- time (Text - HH:mm)
+Include screenshots here to showcase:
+- 🗕️ The calendar with date-based task filtering
+- 📝 The task creation/editing screen
+- 👤 The profile settings page
 
 ---
 
-## ✅ To-Do (Future Enhancements)
+## 🤛️ Author
 
-- Notifications & reminders for tasks
-- Dark mode support
-- iCloud sync for task backup
-- Profile editing
+**Prabal Manchanda**  
+iOS Developer | Swift Enthusiast | Creator of focused and intuitive mobile experiences  
+[[LinkedIn](https://linkedin.com/in/yourusername)](https://www.linkedin.com/in/prabal-manchanda/) • [[Portfolio](https://yourportfolio.com)](https://prabalmanchanda.com/) • [[GitHub](https://github.com/yourusername)](https://github.com/Prabal31)
 
----
 
-## 🙌 Author
-
-**Prabh Manchanda**  
-[LinkedIn](https://linkedin.com/in/prabhmanchanda) | [GitHub](https://github.com/prabhmanchanda)
-
----
-
-## 📄 License
-
-This project is open source under the [MIT License](LICENSE).
-```
-
----
-
-Just copy and paste that into a `README.md` file in your repo — and you’re good to go. Let me know if you want a version with images or badges too!
