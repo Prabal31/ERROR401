@@ -92,6 +92,6 @@ QuickTask/
 
 **Prabal Manchanda**  
 iOS Developer | Swift Enthusiast | Creator of focused and intuitive mobile experiences  
-[[LinkedIn](https://linkedin.com/in/yourusername)](https://www.linkedin.com/in/prabal-manchanda/) • [[Portfolio](https://yourportfolio.com)](https://prabalmanchanda.com/) • [[GitHub](https://github.com/yourusername)](https://github.com/Prabal31)
+https://linkedin.com/in/yourusername • https://prabalmanchanda.com/ • https://github.com/Prabal31
 
 
