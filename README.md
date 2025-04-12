@@ -60,7 +60,7 @@ QuickTask/
 
 1. **Clone the repository**
    ```bash
-   [git clone https://github.com/yourusername/QuickTask.git]
+   git clone https://github.com/yourusername/QuickTask.git
    ```
 
 2. **Open the project in Xcode**
