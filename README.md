@@ -28,30 +28,45 @@
 ```
 QuickTask/
 │
-├── AppDelegate.swift               # App setup and DB initialization
-├── SceneDelegate.swift             # Scene lifecycle management
+├── Assets.xcassets/                  # App icons and color sets
 │
-├── Models/
-│   └── Task.swift                  # Data model for tasks
+├── Base.lproj/
+│   ├── LaunchScreen.storyboard       # Launch screen layout
+│   └── Main.storyboard               # Primary UI layout
 │
-├── Controllers/
-│   ├── SignupViewController.swift        # Sign-up screen logic
-│   ├── LoginViewController.swift         # Login screen logic
-│   ├── MainTaskViewController.swift      # Calendar and task list
-│   ├── AddEditTaskViewController.swift   # Add/edit task form
-│   └── SettingsViewController.swift      # Profile info + logout
+├── Images/                           # Screenshot images for README/demo
+│   ├── b1.jpg
+│   ├── base.jpg
+│   ├── home.jpg
+│   ├── login.jpg
+│   ├── M1.jpg
+│   ├── M2.jpg
+│   ├── Setting.jpeg
+│   └── signup.jpeg
 │
-├── Views/
-│   ├── CalendarCell.swift          # Custom horizontal calendar cell
-│   └── TaskCell.swift              # UITableViewCell for tasks
+├── Model/
+│   ├── Task.swift                    # Task model
+│   └── User.swift                    # User model
 │
-├── Database/
-│   └── DBHelper.swift              # SQLite logic for users & tasks
+├── QuickTask.xcdatamodeld/
+│   ├── QuickTask.xcdatamodel         # Core Data model
+│   └── .xccurrentversion             # Core Data versioning
 │
-├── Assets.xcassets/               # Icons and image assets
-├── LaunchScreen.storyboard        # Launch screen layout
-├── Main.storyboard                # Primary UI layout
-└── Info.plist                     # App configuration file
+├── ViewController/
+│   ├── AddTaskViewController.swift
+│   ├── EditTaskViewController.swift
+│   ├── LoginViewController.swift
+│   ├── MainTaskViewController.swift
+│   ├── MainViewController.swift
+│   ├── SettingViewController.swift
+│   ├── SignupViewController.swift
+│   └── ViewController.swift
+│
+├── AppDelegate.swift                # App lifecycle and DB setup
+├── SceneDelegate.swift              # Scene lifecycle
+├── Info.plist                       # App configuration
+├── LICENSE                          # MIT License
+└── QuickTask.xcodeproj/             # Xcode project file
 ```
 
 ---
