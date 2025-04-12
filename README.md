@@ -76,7 +76,6 @@ QuickTask/
 1. **Clone the repository**
    ```bash
    git clone https://github.com/yourusername/QuickTask.git
-   ```
 
 2. **Open the project in Xcode**
    ```bash
@@ -86,15 +85,6 @@ QuickTask/
 3. **Build and run** on a simulator or physical device running iOS 15 or higher.
 
 > ✅ Tested with Xcode 14+ and iOS 15+
-
----
-
-## 📸 Screenshots *(optional)*
-
-Include screenshots here to showcase:
-- 🗕️ The calendar with date-based task filtering
-- 📝 The task creation/editing screen
-- 👤 The profile settings page
 
 ---
 
